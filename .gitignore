@@ -1,0 +1,369 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #1f120d;
+  --bg-soft: #2a1b17;
+  --panel: #f4ead7;
+  --panel-strong: #e3d0aa;
+  --text: #1d120d;
+  --muted: #685747;
+  --gold: #c89b42;
+  --gold-soft: #d7b76d;
+  --accent: #8a5e2f;
+  --white: #fffaf3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #140d09 0%, #241712 100%);
+  color: var(--white);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(26, 16, 11, 0.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.brand-mark {
+  color: var(--gold-soft);
+  font-size: 1.3rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: rgba(255,255,255,0.75);
+}
+
+.hero {
+  padding: 80px 0 60px;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--gold-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cinzel', serif;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.7rem, 5vw, 5rem);
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+
+.lead {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.77);
+  max-width: 620px;
+}
+
+.cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button.primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+  color: #23160f;
+}
+
+.button.secondary {
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.02);
+}
+
+.stats {
+  list-style: none;
+  padding: 0;
+  margin: 36px 0 0;
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.stats li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stats strong {
+  font-size: 1.5rem;
+  color: var(--gold-soft);
+}
+
+.stats span {
+  color: rgba(255,255,255,0.7);
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drum-card {
+  position: relative;
+  width: min(360px, 80vw);
+  height: 420px;
+  border-radius: 30px;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.18), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+}
+
+.drum-shell {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 240px;
+  height: 240px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #8d5a31, #3a2217 45%, #1d120d 100%);
+  border: 14px solid rgba(210, 172, 104, 0.7);
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.38);
+}
+
+.drum-head {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 180px;
+  height: 180px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #d4b67b 0%, #a86f3f 30%, #683b1b 100%);
+  border: 10px solid rgba(255,255,255,0.15);
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.2);
+}
+
+.drum-strap {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  width: 210px;
+  height: 220px;
+  transform: translateX(-50%);
+  border: 10px solid rgba(200,155,66,0.8);
+  border-bottom: none;
+  border-radius: 100% 100% 0 0;
+}
+
+.section {
+  padding: 92px 0;
+}
+
+.about,
+.collections,
+.benefits,
+.testimonials {
+  background: rgba(255,255,255,0.02);
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.two-columns h2,
+.centered {
+  text-align: center;
+}
+
+.two-columns p {
+  color: rgba(255,255,255,0.75);
+  line-height: 1.8;
+  font-size: 1.02rem;
+}
+
+.cards {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 28px 20px;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.08);
+}
+
+.card-badge {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #2f1d14;
+  background: linear-gradient(135deg, var(--gold-soft), #f0d79d);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card p {
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+}
+
+.card span {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--gold-soft);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.benefit-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.benefit-grid div {
+  background: rgba(255,255,255,0.03);
+  border-radius: 18px;
+  padding: 28px 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.benefit-grid p {
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+}
+
+.quote-box {
+  margin: 0 auto;
+  max-width: 760px;
+  background: linear-gradient(135deg, rgba(200,155,66,0.15), rgba(255,255,255,0.03));
+  border: 1px solid rgba(200,155,66,0.25);
+  border-radius: 22px;
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.quote-box p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.88);
+}
+
+.quote-box span {
+  color: var(--gold-soft);
+  font-weight: 700;
+}
+
+.footer {
+  padding: 40px 0 60px;
+  background: #110b09;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer p {
+  color: rgba(255,255,255,0.7);
+  margin: 8px 0;
+}
+
+@media (max-width: 860px) {
+  nav {
+    display: none;
+  }
+
+  .hero-content,
+  .two-columns,
+  .cards,
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 56px;
+  }
+}
